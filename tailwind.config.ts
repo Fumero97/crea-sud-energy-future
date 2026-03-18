@@ -9,12 +9,13 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Source Sans 3", "system-ui", "sans-serif"],
+        serif: ["Merriweather", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -23,15 +24,15 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         flame: {
-          DEFAULT: "#FF6B2B",
-          light: "#FF8C42",
+          DEFAULT: "#E05A20",
+          light: "#F0874D",
+          dark: "#B84A1A",
         },
-        spark: "#FF8C42",
         aqua: {
-          DEFAULT: "#0EA5E9",
-          light: "#38BDF8",
+          DEFAULT: "#1A8FC4",
+          light: "#3AAFDF",
+          dark: "#146F99",
         },
-        sky: "#38BDF8",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -85,15 +86,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
       },
     },
   },
