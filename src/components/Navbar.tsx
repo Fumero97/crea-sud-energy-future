@@ -28,9 +28,7 @@ const Navbar = () => {
       {/* Main nav */}
       <nav className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl font-serif font-bold text-foreground">
-            CREA<span className="text-gradient-brand">-SUD</span>
-          </span>
+          <img src="/logo.png" alt="CREA-SUD Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop */}

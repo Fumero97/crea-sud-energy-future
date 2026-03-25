@@ -6,7 +6,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <span className="text-lg font-serif font-bold">CREA-SUD</span>
+            <div className="bg-white/90 p-2 rounded-md inline-block mb-3">
+              <img src="/logo.png" alt="CREA-SUD Logo" className="h-8 w-auto" />
+            </div>
             <p className="text-sm mt-2 opacity-70 max-w-xs">
               Celle a Combustibile Reversibili Avanzate e Sostenibili di bassa
               ed alta temperatura.
