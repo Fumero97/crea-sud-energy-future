@@ -59,6 +59,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
+        </div>
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between gap-6">
           <p className="cs-small text-white/50">
             © 2026 CREA-SUD. Tutti i diritti riservati.
