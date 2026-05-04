@@ -1,7 +1,38 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 
 const Contatti = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  // NOTA: Sostituire 'YOUR_FORMSPREE_ID' con l'ID reale fornito da Formspree.com
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgzjgnq"; // Placeholder o ID reale se fornito
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        alert("Si è verificato un errore. Riprova più tardi.");
+      }
+    } catch (error) {
+      alert("Si è verificato un errore di connessione.");
+    }
+  };
+
   return (
     <Layout>
       <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
@@ -57,49 +88,79 @@ const Contatti = () => {
 
             <div className="md:col-span-7">
               <div className="bg-white border border-[#C9C5BF] p-10">
-                <h3 className="cs-h3 mb-8">Inviaci un messaggio</h3>
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Nome e Cognome</label>
-                      <input
-                        type="text"
-                        placeholder="Inserisci il tuo nome"
-                        className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors"
-                      />
+                {submitted ? (
+                  <div className="py-12 text-center space-y-6 animate-in fade-in zoom-in duration-500">
+                    <div className="w-20 h-20 bg-[#E08030]/10 text-[#E08030] rounded-full flex items-center justify-center mx-auto">
+                      <CheckCircle size={40} />
                     </div>
                     <div>
-                      <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Indirizzo Email</label>
-                      <input
-                        type="email"
-                        placeholder="email@esempio.com"
-                        className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors"
-                      />
+                      <h3 className="cs-h3 mb-2">Messaggio Inviato</h3>
+                      <p className="text-[#4A4744] text-[15px]">
+                        Grazie per averci contattato. Il team di CREA-SUD ti risponderà al più presto.
+                      </p>
                     </div>
+                    <button 
+                      onClick={() => setSubmitted(false)}
+                      className="cs-link text-[14px] font-bold uppercase tracking-wider"
+                    >
+                      Invia un altro messaggio
+                    </button>
                   </div>
-                  <div>
-                    <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Oggetto</label>
-                    <input
-                      type="text"
-                      placeholder="Collaborazione, info tecniche, etc."
-                      className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Messaggio</label>
-                    <textarea
-                      rows={6}
-                      placeholder="Come possiamo aiutarti?"
-                      className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="cs-btn cs-btn--primary w-full justify-center py-4"
-                  >
-                    Invia Messaggio <Send size={16} />
-                  </button>
-                </form>
+                ) : (
+                  <>
+                    <h3 className="cs-h3 mb-8">Inviaci un messaggio</h3>
+                    <form className="space-y-6" onSubmit={handleSubmit}>
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Nome e Cognome</label>
+                          <input
+                            required
+                            name="name"
+                            type="text"
+                            placeholder="Inserisci il tuo nome"
+                            className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Indirizzo Email</label>
+                          <input
+                            required
+                            name="email"
+                            type="email"
+                            placeholder="email@esempio.com"
+                            className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Oggetto</label>
+                        <input
+                          required
+                          name="subject"
+                          type="text"
+                          placeholder="Collaborazione, info tecniche, etc."
+                          className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="cs-mono text-[10px] uppercase text-[#908080] block mb-2">Messaggio</label>
+                        <textarea
+                          required
+                          name="message"
+                          rows={6}
+                          placeholder="Come possiamo aiutarti?"
+                          className="w-full px-4 py-3 border border-[#E8E6E2] focus:border-[#002040] bg-white text-[14px] focus:outline-none transition-colors resize-none"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="cs-btn cs-btn--primary w-full justify-center py-4"
+                      >
+                        Invia Messaggio <Send size={16} />
+                      </button>
+                    </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
