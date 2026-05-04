@@ -198,8 +198,9 @@ const ObiettiviList = () => {
         </div>
       </div>
     </section>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 const ObiettivoDetail = () => {
   const { id } = useParams();

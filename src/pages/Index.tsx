@@ -152,19 +152,23 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-[#FAF9F6] border-b border-[#E8E6E2] overflow-hidden pt-20 pb-32">
-        <div className="cs-container">
+      <section className="bg-[#FAF9F6] border-b border-[#E8E6E2] overflow-hidden pt-20 pb-32 relative">
+        {/* Decorazione di sfondo */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E08030]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#30A0D0]/5 blur-[80px] rounded-full translate-y-1/2 -translate-x-1/2" />
+        
+        <div className="cs-container relative z-10">
           <div className="grid md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-8">
-              <p className="cs-eyebrow mb-6">Progetto PNRR · M2-C2 / Inv. 3.5</p>
-              <h1 className="cs-h1 mb-8">
+              <p className="cs-eyebrow mb-6 cs-reveal">Progetto PNRR · M2-C2 / Inv. 3.5</p>
+              <h1 className="cs-h1 mb-8 cs-reveal-delayed-1">
                 Celle <em>REversibili</em> Avanzate e sostenibili di bassa ed alta temperatura
               </h1>
-              <p className="cs-lead mb-10">
+              <p className="cs-lead mb-10 cs-reveal-delayed-2">
                 Ricerca e Sviluppo Unificato di concept, materiali e Design innovativi per celle a combustibile reversibili a membrana polimerica (rPEMC) e a ossido solido (rSOC), nel quadro dei target europei per l'idrogeno.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 cs-reveal-delayed-2">
                 <Link to="/progetto" className="cs-btn cs-btn--primary">
                   Scopri il Progetto <ArrowRight size={16} />
                 </Link>
@@ -280,7 +284,7 @@ const Index = () => {
                 Vedi dettagli obiettivi →
               </Link>
 
-              <div className="mt-12 grid grid-cols-2 gap-4">
+              <div className="mt-12 grid grid-cols-2 gap-4 cs-reveal-delayed-2">
                 {[
                   { src: "/loghi/unical.png", alt: "Unical", url: "https://www.unical.it/" },
                   { src: "/loghi/sapienza.png", alt: "Sapienza", url: "https://www.uniroma1.it/" },
@@ -293,7 +297,7 @@ const Index = () => {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-[#C9C5BF] p-3 flex items-center justify-center h-16 hover:border-[#E08030] transition-all duration-300"
+                    className="bg-white border border-[#C9C5BF] p-3 flex items-center justify-center h-16 hover:border-[#E08030] transition-all duration-300 cs-hover-lift"
                   >
                     <img src={p.src} alt={p.alt} className="max-h-10 max-w-full object-contain" />
                   </a>
@@ -304,7 +308,7 @@ const Index = () => {
             <div className="md:col-span-8">
               <div className="bg-white border border-[#C9C5BF]">
                 {orList.map((or) => (
-                  <div key={or.id} className="flex border-b border-[#E8E6E2] last:border-0 group hover:bg-[#FAF9F6] transition-colors">
+                  <div key={or.id} className="flex border-b border-[#E8E6E2] last:border-0 group hover:bg-[#FAF9F6] transition-all duration-300 cs-hover-lift">
                     <div className="w-20 shrink-0 border-r border-[#E8E6E2] flex items-center justify-center bg-[#FAF9F6]/50">
                       <span className="font-serif italic text-2xl text-[#E08030]/40 group-hover:text-[#E08030] transition-colors">
                         {or.id}

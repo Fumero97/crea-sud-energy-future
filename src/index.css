@@ -267,3 +267,49 @@ a.cs-link:hover { color: var(--cs-orange-600); }
   outline: 2px solid var(--cs-orange-500);
   outline-offset: 2px;
 }
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMAZIONI & EFFETTI MODERNI
+   ═══════════════════════════════════════════════════════════════════════════ */
+@keyframes cs-reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cs-slide-right {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@layer utilities {
+  .cs-reveal {
+    animation: cs-reveal 0.8s var(--cs-ease) forwards;
+  }
+  
+  .cs-reveal-delayed-1 { animation: cs-reveal 0.8s var(--cs-ease) 0.2s forwards; opacity: 0; }
+  .cs-reveal-delayed-2 { animation: cs-reveal 0.8s var(--cs-ease) 0.4s forwards; opacity: 0; }
+  
+  .cs-hover-lift {
+    transition: transform var(--cs-duration-2) var(--cs-ease), 
+                box-shadow var(--cs-duration-2) var(--cs-ease);
+  }
+  .cs-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--cs-shadow-3);
+  }
+
+  .cs-glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .cs-tech-card {
+    @apply relative overflow-hidden bg-white border border-[#C9C5BF] transition-all duration-500;
+  }
+  .cs-tech-card::after {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none;
+    background: radial-gradient(circle at top right, rgba(224, 128, 48, 0.05), transparent 70%);
+  }
+  .cs-tech-card:hover::after {
+    @apply opacity-100;
+  }
+}
