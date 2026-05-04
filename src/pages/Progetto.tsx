@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -94,6 +95,10 @@ const milestones = [
 ];
 
 const Progetto = () => {
+  useEffect(() => {
+    document.title = "Il Progetto | CREA-SUD · Ricerca e Sviluppo H2";
+  }, []);
+
   return (
     <Layout>
       {/* Header */}

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { ArrowRight, Beaker, Zap } from "lucide-react";
@@ -144,6 +145,10 @@ const milestones = [
 ];
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "CREA-SUD · Homepage | Advanced Reversible Fuel Cells";
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}

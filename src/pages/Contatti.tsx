@@ -5,6 +5,10 @@ import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 const Contatti = () => {
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    document.title = "Contatti | CREA-SUD · Relazioni Esterne";
+  }, []);
+
   // NOTA: Sostituire 'YOUR_FORMSPREE_ID' con l'ID reale fornito da Formspree.com
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgzjgnq"; // Placeholder o ID reale se fornito
 

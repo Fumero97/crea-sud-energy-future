@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { ArrowRight, ArrowLeft } from "lucide-react";
@@ -134,7 +135,12 @@ const orData = [
   },
 ];
 
-const ObiettiviList = () => (
+const ObiettiviList = () => {
+  useEffect(() => {
+    document.title = "Obiettivi Realizzativi | CREA-SUD · Piano di Ricerca";
+  }, []);
+
+  return (
   <Layout>
     <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
       <div className="cs-container">
@@ -215,6 +221,12 @@ const ObiettivoDetail = () => {
   const currentIndex = orData.findIndex((o) => o.id === id);
   const prev = currentIndex > 0 ? orData[currentIndex - 1] : null;
   const next = currentIndex < orData.length - 1 ? orData[currentIndex + 1] : null;
+
+  useEffect(() => {
+    if (or) {
+      document.title = `${or.num} · ${or.titolo} | CREA-SUD`;
+    }
+  }, [or]);
 
   return (
     <Layout>
