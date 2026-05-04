@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ═══════════════════════════════════════════════════════════════════════════
    CREA-SUD · Brand Tokens
    Celle REversibili Avanzate e sostenibili di bassa ed alta temperatura:
@@ -138,32 +134,32 @@ body {
    TIPOGRAFIA · Classi semantiche
    ═══════════════════════════════════════════════════════════════════════════ */
 
-@layer components {
-  /* H1-H4 sempre in Spectral, mai in Inter. Italic per emphasis poetico. */
-  .cs-display,
-  .cs-h1, .cs-h2, .cs-h3, .cs-h4 {
-    @apply font-serif text-[#0E1626];
-    margin: 0;
-  }
-  .cs-display { font-size: var(--cs-fs-display); font-weight: 300; line-height: var(--cs-lh-tight); letter-spacing: var(--cs-ls-display); }
-  .cs-h1      { font-size: var(--cs-fs-h1);      font-weight: 300; line-height: var(--cs-lh-snug);  letter-spacing: var(--cs-ls-display); }
-  .cs-h2      { font-size: var(--cs-fs-h2);      font-weight: 400; line-height: var(--cs-lh-snug);  letter-spacing: var(--cs-ls-tight); }
-  .cs-h3      { font-size: var(--cs-fs-h3);      font-weight: 500; line-height: var(--cs-lh-snug); }
-  .cs-h4      { font-size: var(--cs-fs-h4);      font-weight: 600; line-height: var(--cs-lh-snug); }
-  .cs-h1 em, .cs-h2 em, .cs-display em {
-    @apply not-italic font-normal text-[#E08030];
-    font-style: italic; /* override apply if needed */
-  }
-
-  .cs-lead {
-    font-size: var(--cs-fs-lead);
-    line-height: var(--cs-lh-loose);
-    @apply text-[#4A4744];
-    max-width: 60ch;
-  }
-  .cs-body  { font-size: var(--cs-fs-body);  line-height: var(--cs-lh-base); }
-  .cs-small { font-size: var(--cs-fs-small); line-height: var(--cs-lh-base); @apply text-[#4A4744]; }
+/* H1-H4 sempre in Spectral, mai in Inter. Italic per emphasis poetico. */
+.cs-display,
+.cs-h1, .cs-h2, .cs-h3, .cs-h4 {
+  font-family: var(--cs-font-display);
+  color: var(--cs-ink);
+  margin: 0;
 }
+.cs-display { font-size: var(--cs-fs-display); font-weight: 300; line-height: var(--cs-lh-tight); letter-spacing: var(--cs-ls-display); }
+.cs-h1      { font-size: var(--cs-fs-h1);      font-weight: 300; line-height: var(--cs-lh-snug);  letter-spacing: var(--cs-ls-display); }
+.cs-h2      { font-size: var(--cs-fs-h2);      font-weight: 400; line-height: var(--cs-lh-snug);  letter-spacing: var(--cs-ls-tight); }
+.cs-h3      { font-size: var(--cs-fs-h3);      font-weight: 500; line-height: var(--cs-lh-snug); }
+.cs-h4      { font-size: var(--cs-fs-h4);      font-weight: 600; line-height: var(--cs-lh-snug); }
+.cs-h1 em, .cs-h2 em, .cs-display em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cs-orange-600);
+}
+
+.cs-lead {
+  font-size: var(--cs-fs-lead);
+  line-height: var(--cs-lh-loose);
+  color: var(--cs-grey-700);
+  max-width: 60ch;
+}
+.cs-body  { font-size: var(--cs-fs-body);  line-height: var(--cs-lh-base); }
+.cs-small { font-size: var(--cs-fs-small); line-height: var(--cs-lh-base); color: var(--cs-grey-700); }
 
 /* Eyebrow — kicker uppercase mono sopra ogni titolo importante */
 .cs-eyebrow {

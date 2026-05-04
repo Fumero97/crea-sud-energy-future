@@ -6,8 +6,6 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Il Progetto", href: "/progetto" },
   { label: "Obiettivi Realizzativi", href: "/obiettivi" },
-  { label: "Tecnologie", href: "/tecnologie" },
-  { label: "Pubblicazioni", href: "/pubblicazioni" },
   { label: "Contatti", href: "/contatti" },
 ];
 
@@ -16,31 +14,23 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-border">
-      {/* Top bar */}
-      <div className="bg-foreground text-background text-xs py-1.5">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <span>Progetto PNRR — Ministero dell'Università e della Ricerca</span>
-          <span className="hidden sm:inline">info@creasud.it</span>
-        </div>
-      </div>
-
+    <header className="sticky top-0 z-50 bg-white border-b border-border">
       {/* Main nav */}
-      <nav className="container mx-auto px-4 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="CREA-SUD Logo" className="h-12 w-auto" />
+      <nav className="cs-container flex items-center justify-between h-16">
+        <Link to="/" className="flex items-center">
+          <img src="/logo.png" alt="CREA-SUD" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (
             <Link
               key={l.href}
               to={l.href}
-              className={`text-sm px-3 py-2 transition-colors duration-200 ${
+              className={`text-[14px] font-medium transition-colors duration-200 relative py-1 ${
                 location.pathname === l.href
-                  ? "text-primary font-semibold"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-[#002040] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-[#E08030]"
+                  : "text-[#002040]/70 hover:text-[#002040] hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:w-full hover:after:h-[1px] hover:after:bg-[#E08030]"
               }`}
             >
               {l.label}
@@ -50,7 +40,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-foreground p-2"
+          className="lg:hidden text-[#002040] p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -60,17 +50,17 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
+        <div className="lg:hidden border-t border-border bg-white">
+          <div className="cs-container py-4 flex flex-col gap-2">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 to={l.href}
                 onClick={() => setMobileOpen(false)}
-                className={`text-sm py-2 px-3 rounded-sm transition-colors ${
+                className={`text-[14px] py-2 px-3 transition-colors ${
                   location.pathname === l.href
-                    ? "text-primary bg-muted font-semibold"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "text-[#E08030] bg-[#FAF9F6] font-semibold"
+                    : "text-[#002040]/70 hover:text-[#002040] hover:bg-[#FAF9F6]"
                 }`}
               >
                 {l.label}
@@ -79,6 +69,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <div className="cs-rule-accent" />
     </header>
   );
 };

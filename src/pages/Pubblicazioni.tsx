@@ -29,7 +29,7 @@ const Pubblicazioni = () => {
   return (
     <Layout>
       <div className="page-header">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Output</p>
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
             Risultati & Pubblicazioni
@@ -41,7 +41,7 @@ const Pubblicazioni = () => {
       </div>
 
       <section className="section-padding">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <div className="space-y-4">
             {papers.map((p, i) => (
               <article
