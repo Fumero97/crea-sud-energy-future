@@ -8,6 +8,7 @@ import Progetto from "./pages/Progetto";
 import Obiettivi from "./pages/Obiettivi";
 import Pubblicazioni from "./pages/Pubblicazioni";
 import Contatti from "./pages/Contatti";
+import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/obiettivi/:id" element={<Obiettivi />} />
           <Route path="/pubblicazioni" element={<Pubblicazioni />} />
           <Route path="/contatti" element={<Contatti />} />
+          <Route path="/legal" element={<Legal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
