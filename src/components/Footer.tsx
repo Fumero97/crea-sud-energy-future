@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const fundingRows = [
   {
@@ -20,6 +21,8 @@ const fundingRows = [
 ];
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#0E1626] text-white">
       <div className="cs-rule-accent" />
@@ -27,7 +30,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Progetto */}
           <div>
-            <h4 className="cs-eyebrow mb-6 text-white/70">Il Progetto</h4>
+            <h4 className="cs-eyebrow mb-6 text-white/70">{t("footer.project_title")}</h4>
             <p className="cs-small text-white leading-relaxed">
               Celle REversibili Avanzate e sostenibili di bassa ed alta temperatura: ricerca e Sviluppo Unificato di concept, materiali, e Design innovativi
             </p>
@@ -35,7 +38,7 @@ const Footer = () => {
 
           {/* Partner */}
           <div>
-            <h4 className="cs-eyebrow mb-6 text-white/70">Partner</h4>
+            <h4 className="cs-eyebrow mb-6 text-white/70">{t("footer.partner_title")}</h4>
             <div className="cs-small text-white space-y-1">
               <p>Ente capofila: Università della Calabria (FCH2 Team)</p>
               <p>Università Sapienza di Roma</p>
@@ -47,7 +50,7 @@ const Footer = () => {
 
           {/* Finanziamento */}
           <div>
-            <h4 className="cs-eyebrow mb-6 text-white/70">Finanziamento</h4>
+            <h4 className="cs-eyebrow mb-6 text-white/70">{t("footer.funding_title")}</h4>
             <div className="bg-white p-6 space-y-6">
               <div className="inline-block">
                  <img src="/badge-eu-mase.png" alt="Finanziato dall'Unione europea - MASE" className="h-10 w-auto" />
@@ -62,11 +65,11 @@ const Footer = () => {
         </div>
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between gap-6">
           <p className="cs-small text-white/50">
-            © 2026 CREA-SUD. Tutti i diritti riservati.
+            {t("footer.copyright")}
           </p>
           <div className="flex gap-8">
             <Link to="/legal" className="cs-small text-white/50 hover:text-white transition-colors">
-              Privacy & Cookie Policy
+              {t("footer.legal")}
             </Link>
           </div>
         </div>

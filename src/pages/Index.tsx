@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { useLanguage } from "../contexts/LanguageContext";
 import { ArrowRight, Beaker, Zap } from "lucide-react";
 
 
@@ -145,6 +146,8 @@ const milestones = [
 ];
 
 const Index = () => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     document.title = "CREA-SUD · Homepage | Advanced Reversible Fuel Cells";
   }, []);
@@ -157,54 +160,48 @@ const Index = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E08030]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#30A0D0]/5 blur-[80px] rounded-full translate-y-1/2 -translate-x-1/2" />
         
-        <div className="cs-container relative z-10">
-          <div className="grid md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-8">
-              <p className="cs-eyebrow mb-6 cs-reveal">Progetto PNRR · M2-C2 / Inv. 3.5</p>
-              <h1 className="cs-h1 mb-8 cs-reveal-delayed-1">
-                Celle <em>REversibili</em> Avanzate e sostenibili di bassa ed alta temperatura
-              </h1>
-              <p className="cs-lead mb-10 cs-reveal-delayed-2">
-                Ricerca e Sviluppo Unificato di concept, materiali e Design innovativi per celle a combustibile reversibili a membrana polimerica (rPEMC) e a ossido solido (rSOC), nel quadro dei target europei per l'idrogeno.
-              </p>
-
-              <div className="flex flex-wrap gap-4 cs-reveal-delayed-2">
-                <Link to="/progetto" className="cs-btn cs-btn--primary">
-                  Scopri il Progetto <ArrowRight size={16} />
-                </Link>
-                <Link to="/obiettivi" className="cs-btn cs-btn--ghost">
-                  Obiettivi Realizzativi
-                </Link>
-              </div>
-
-              
+        <div className="cs-container relative z-10 py-24 md:py-32">
+          <div className="max-w-4xl">
+            <p className="cs-eyebrow mb-6 cs-reveal opacity-0" style={{ animationFillMode: 'forwards' }}>
+              {t("hero.eyebrow")}
+            </p>
+            <h1 className="cs-h1 mb-8 cs-reveal-delayed-1 opacity-0" style={{ animationFillMode: 'forwards' }}>
+              {t("hero.title")}
+            </h1>
+            <p className="cs-lead mb-10 cs-reveal-delayed-2 opacity-0" style={{ animationFillMode: 'forwards' }}>
+              {t("hero.lead")}
+            </p>
+            <div className="flex flex-wrap gap-4 cs-reveal-delayed-2 opacity-0" style={{ animationFillMode: 'forwards' }}>
+              <Link to="/progetto" className="cs-btn cs-btn--primary">
+                {t("hero.cta_project")}
+              </Link>
+              <Link to="/obiettivi" className="cs-btn cs-btn--secondary">
+                {t("hero.cta_objectives")}
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* KPI Section */}
-      <section className="py-12 bg-white border-b border-[#E8E6E2]">
+      <section className="py-16 border-b border-border bg-[#FAF9F6]">
         <div className="cs-container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {kpis.map((kpi) => (
-              <div key={kpi.label} className="group relative">
-                <div className="w-8 h-1 bg-[#E08030] mb-4 opacity-30 group-hover:opacity-100 transition-opacity" />
-                <div className="flex items-baseline gap-4">
-                  <p className="cs-h1 text-[#E08030] leading-none shrink-0">
-                    {kpi.value}
-                  </p>
-                  <div className="flex-1">
-                    <p className="font-bold text-[14px] text-[#0E1626] uppercase tracking-tight">
-                      {kpi.label}
-                    </p>
-                    <p className="cs-mono text-[10px] text-[#908080] uppercase">
-                      {kpi.sub}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div className="flex flex-col gap-2">
+              <span className="text-[12px] font-mono text-[#908080] uppercase tracking-widest">{t("kpi.partners")}</span>
+              <span className="text-3xl font-serif font-bold text-[#0E1626]">5</span>
+              <p className="text-[14px] text-[#4A4744]">{t("kpi.consortium")}</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[12px] font-mono text-[#908080] uppercase tracking-widest">{t("kpi.objectives")}</span>
+              <span className="text-3xl font-serif font-bold text-[#0E1626]">7</span>
+              <p className="text-[14px] text-[#4A4744]">{t("kpi.lines")}</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[12px] font-mono text-[#908080] uppercase tracking-widest">{t("kpi.timeline")}</span>
+              <span className="text-3xl font-serif font-bold text-[#0E1626]">36</span>
+              <p className="text-[14px] text-[#4A4744]">{t("kpi.months")}</p>
+            </div>
           </div>
         </div>
       </section>

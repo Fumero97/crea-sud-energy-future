@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { X, Cookie } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -36,10 +38,10 @@ const CookieBanner = () => {
             <Cookie className="text-[#E08030]" size={20} />
           </div>
           <div className="flex-1">
-            <h4 className="font-bold text-[#0E1626] text-[15px] mb-2 uppercase tracking-tight">Gestione Cookie</h4>
+            <h4 className="font-bold text-[#0E1626] text-[15px] mb-2 uppercase tracking-tight">{t("cookies.title")}</h4>
             <p className="text-[13px] text-[#4A4744] leading-relaxed mb-6">
-              Utilizziamo cookie tecnici e analitici anonimizzati per migliorare la tua esperienza sul sito del progetto CREA-SUD. Consulta la nostra{" "}
-              <Link to="/legal" className="cs-link decoration-[#E08030]">Cookie Policy</Link>.
+              {t("cookies.lead")}{" "}
+              <Link to="/legal" className="cs-link decoration-[#E08030]">{t("cookies.link")}</Link>.
             </p>
             
             <div className="flex items-center gap-3">
@@ -47,13 +49,13 @@ const CookieBanner = () => {
                 onClick={acceptCookies}
                 className="cs-btn cs-btn--primary py-2 text-[12px] flex-1 justify-center"
               >
-                Accetta
+                {t("cookies.accept")}
               </button>
               <button 
                 onClick={declineCookies}
                 className="cs-btn cs-btn--ghost py-2 text-[12px] flex-1 justify-center"
               >
-                Rifiuta
+                {t("cookies.decline")}
               </button>
             </div>
           </div>

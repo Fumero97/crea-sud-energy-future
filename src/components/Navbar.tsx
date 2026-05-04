@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -12,6 +14,14 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.project"), href: "/progetto" },
+    { label: t("nav.objectives"), href: "/obiettivi" },
+    { label: t("nav.contacts"), href: "/contatti" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border">
@@ -36,6 +46,10 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
+          
+          <div className="ml-4 border-l border-[#E8E6E2] pl-6">
+            <LanguageSwitcher />
+          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -66,6 +80,9 @@ const Navbar = () => {
                 {l.label}
               </Link>
             ))}
+            <div className="mt-4 pt-4 border-t border-[#E8E6E2]">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}
