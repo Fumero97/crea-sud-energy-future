@@ -70,3 +70,88 @@ Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
 16 |  :root {
 2:54:47 AM [vite] hmr invalidate /src/contexts/LanguageContext.tsx Could not Fast Refresh ("useLanguage" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc#consistent-components-exports
 2:54:47 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/components/Navbar.tsx, /src/components/LanguageSwitcher.tsx, /src/pages/Index.tsx, /src/components/Footer.tsx, /src/components/CookieBanner.tsx
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:56:19 AM [vite] hmr update /src/index.css, /src/contexts/LanguageContext.tsx
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:56:19 AM [vite] hmr invalidate /src/contexts/LanguageContext.tsx Could not Fast Refresh ("useLanguage" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc#consistent-components-exports
+2:56:19 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/components/Navbar.tsx, /src/components/LanguageSwitcher.tsx, /src/pages/Index.tsx, /src/components/Footer.tsx, /src/components/CookieBanner.tsx
+2:56:36 AM [vite] hmr update /src/index.css, /src/contexts/LanguageContext.tsx
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:56:36 AM [vite] hmr invalidate /src/contexts/LanguageContext.tsx Could not Fast Refresh ("useLanguage" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc#consistent-components-exports
+2:56:36 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/components/Navbar.tsx, /src/components/LanguageSwitcher.tsx, /src/pages/Index.tsx, /src/components/Footer.tsx, /src/components/CookieBanner.tsx
+2:56:55 AM [vite] hmr update /src/pages/Progetto.tsx, /src/index.css
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:57:09 AM [vite] hmr update /src/pages/Contatti.tsx, /src/index.css
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:57:16 AM [vite] hmr update /src/pages/Contatti.tsx, /src/index.css
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:57:34 AM [vite] hmr update /src/index.css, /src/contexts/LanguageContext.tsx
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:57:35 AM [vite] hmr invalidate /src/contexts/LanguageContext.tsx Could not Fast Refresh ("useLanguage" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc#consistent-components-exports
+2:57:35 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/components/Navbar.tsx, /src/components/LanguageSwitcher.tsx, /src/pages/Index.tsx, /src/components/Footer.tsx, /src/components/CookieBanner.tsx, /src/pages/Progetto.tsx, /src/pages/Contatti.tsx
+2:57:59 AM [vite] hmr update /src/pages/Obiettivi.tsx, /src/index.css
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:58:03 AM [vite] hmr update /src/pages/Obiettivi.tsx, /src/index.css
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {
+2:58:13 AM [vite] hmr update /src/pages/Legal.tsx, /src/index.css
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+12 |     ═══════════════════════════════════════════════════════════════════════════ */
+13 |  
+14 |  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |  
+16 |  :root {

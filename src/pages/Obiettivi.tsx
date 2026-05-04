@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const orData = [
   {
@@ -10,13 +11,14 @@ const orData = [
     ente: "Università della Calabria",
     logo: "/loghi/unical.png",
     url: "https://www.unical.it/",
-    titolo: "Project Management & Disseminazione",
-    obiettivo: "Coordinamento delle attività di progetto, gestione amministrativa e finanziaria, e disseminazione dei risultati scientifici attraverso pubblicazioni, conferenze e attività di divulgazione verso stakeholder e comunità scientifica.",
+    titolo_it: "Project Management & Disseminazione",
+    titolo_en: "Project Management & Dissemination",
+    obiettivo_it: "Coordinamento delle attività di progetto, gestione amministrativa e finanziaria, e disseminazione dei risultati scientifici.",
+    obiettivo_en: "Coordination of project activities, administrative and financial management, and dissemination of scientific results.",
     deliverables: [
-      "D1.1 - M7: Report Intermedio per il monitoraggio dello stato di avanzamento del progetto",
-      "D1.2 - M7: Report intermedio del Piano strategico di comunicazione/disseminazione (sito web, media plan, editorial plan, social, toolkit identità)",
-      "D1.1 - M15: Report finale sullo stato di avanzamento complessivo del progetto",
-      "D1.2 - M15: Report finale sul Piano strategico di comunicazione/disseminazione",
+      "D1.1 - M7: Intermediate Progress Report",
+      "D1.2 - M7: Strategic Communication Plan",
+      "D1.1 - M15: Final Progress Report",
     ],
   },
   {
@@ -25,15 +27,14 @@ const orData = [
     ente: "Università della Calabria",
     logo: "/loghi/unical.png",
     url: "https://www.unical.it/",
-    titolo: "Sintesi di ionomeri e materiali ibridi per membrane elettrolitiche nanocomposite per rPEMC",
-    obiettivo: "Sviluppo di nuove membrane elettrolitiche basate su ionomeri innovativi e materiali ibridi organico-inorganici con prestazioni superiori in termini di conducibilità protonica, stabilità meccanica e chimica.",
+    titolo_it: "Sintesi di ionomeri e materiali ibridi per rPEMC",
+    titolo_en: "Synthesis of Ionomers and Hybrid Materials for rPEMC",
+    obiettivo_it: "Sviluppo di nuove membrane elettrolitiche basate su ionomeri innovativi e materiali ibridi organico-inorganici.",
+    obiettivo_en: "Development of new electrolytic membranes based on innovative ionomers and organic-inorganic hybrid materials.",
     deliverables: [
-      "D2.1 - M7: PEM nanocomposite ottimizzate basate sul Nafion",
-      "D2.2 - M7: 1° generazione di PEM nanocomposite basate sul polisulfone sulfonato (sPSf)",
-      "D2.3 - M7: Relazione sulla caratterizzazione completa delle membrane elettrolitiche",
-      "D2.1 - M14: 2° generazione di PEM nanocomposite ottimizzate basate sul polisulfone sulfonato (sPSf)",
-      "D2.2 - M14: Relazione sulla caratterizzazione completa delle membrane elettrolitiche",
-      "D2.3 - M15: Rapporto sull'analisi post mortem dei MEA e sulla degradazione della membrana elettrolitica",
+      "D2.1 - M7: Optimized Nanocomposite PEMs",
+      "D2.3 - M7: Membrane Characterization Report",
+      "D2.3 - M15: Post-mortem Analysis Report",
     ],
   },
   {
@@ -42,13 +43,14 @@ const orData = [
     ente: "Università Sapienza di Roma",
     logo: "/loghi/sapienza.png",
     url: "https://www.uniroma1.it/",
-    titolo: "Catalizzatori low-Pt e Pt-free per rPEMC, caratterizzazione MEA e stack",
-    obiettivo: "Progettazione e sintesi di catalizzatori a basso contenuto di platino e privi di platino per celle reversibili PEM, con caratterizzazione completa di MEA e test su stack.",
+    titolo_it: "Catalizzatori low-Pt e Pt-free per rPEMC",
+    titolo_en: "Low-Pt and Pt-free Catalysts for rPEMC",
+    obiettivo_it: "Progettazione e sintesi di catalizzatori a basso contenuto di platino e privi di platino per celle reversibili PEM.",
+    obiettivo_en: "Design and synthesis of low-platinum and platinum-free catalysts for reversible PEM cells.",
     deliverables: [
-      "D3.1 - M7: Report sulle proprietà dei catalizzatori di I generazione",
-      "D3.2 - M15: Report sulle proprietà dei catalizzatori di II generazione",
-      "D3.3 - M9: Report sulla attività di analisi delle configurazioni innovative",
-      "D3.4 - M15: Report sulla attività di progettazione e realizzazione di stack di celle PEMFC reversibili",
+      "D3.1 - M7: Phase I Catalyst Report",
+      "D3.3 - M9: Innovative Configuration Analysis",
+      "D3.4 - M15: Reversible Stack Design Report",
     ],
   },
   {
@@ -57,13 +59,14 @@ const orData = [
     ente: "Università di Salerno",
     logo: "/loghi/salerno.jpg",
     url: "https://www.unisa.it/",
-    titolo: "Nuovi materiali e deposizione RF sputtering per rSOC a T < 700°C",
-    obiettivo: "Sviluppo di nuovi materiali e tecniche di deposizione tramite RF sputtering per celle a ossidi solidi reversibili operanti a temperature intermedie inferiori a 700°C.",
+    titolo_it: "Nuovi materiali e deposizione RF sputtering per rSOC",
+    titolo_en: "New Materials and RF Sputtering Deposition for rSOC",
+    obiettivo_it: "Sviluppo di nuovi materiali e tecniche di deposizione tramite RF sputtering per celle rSOC a T < 700°C.",
+    obiettivo_en: "Development of new materials and RF sputtering deposition techniques for rSOC cells at T < 700°C.",
     deliverables: [
-      "D4.1 - M7: Report con descrizione dell'upgrading eseguito sull'attrezzatura per Sputtering RF",
-      "D4.2 - M7: Report sui risultati ottenuti con valutazione di utilizzo futuro in rSOC dei materiali investigati",
-      "D4.3 - M9: Report sui risultati di caratterizzazione su rSOC di 10 cm²",
-      "D4.4 - M14: Report sui risultati di caratterizzazione su rSOC di 100 cm²",
+      "D4.1 - M7: RF Sputtering Upgrade Report",
+      "D4.3 - M9: rSOC 10 cm² Characterization",
+      "D4.4 - M14: rSOC 100 cm² Characterization",
     ],
   },
   {
@@ -72,19 +75,14 @@ const orData = [
     ente: "Università di Camerino",
     logo: "/loghi/camerino.svg",
     url: "https://www.unicam.it/",
-    titolo: "Caratterizzazione chimico-fisica avanzata e diagnostica state-of-health per rPEMC e rSOC",
-    obiettivo: "Sviluppo di metodologie avanzate di caratterizzazione e diagnostica per valutare lo stato di salute delle celle reversibili, identificando meccanismi di degrado e strategie di mitigazione.",
+    titolo_it: "Caratterizzazione avanzata e diagnostica per rPEMC e rSOC",
+    titolo_en: "Advanced Characterization and Diagnostics for rPEMC and rSOC",
+    obiettivo_it: "Sviluppo di metodologie avanzate di caratterizzazione e diagnostica per valutare lo stato di salute delle celle reversibili.",
+    obiettivo_en: "Development of advanced characterization and diagnostic methodologies to evaluate the state-of-health of reversible cells.",
     deliverables: [
-      "D5.1 - M9: Report sulla caratterizzazione dei materiali commerciali di riferimento e caratterizzazione preliminare dei materiali sviluppati nel progetto",
-      "D5.2 - M9: Report preliminare sulla caratterizzazione delle superfici",
-      "D5.3 - M11: Messa a punto del setup sperimentale per misure XAS in situ e relativo report",
-      "D5.4 - M7: Report sullo sviluppo del modello elettrochimico di funzionamento delle celle r-PEMC e r-SOC basato su misure EIS e analisi DRT",
-      "D5.5 - M9: Report sulla sintesi di catalizzatori low-cost derivati da MOFs e report preliminare sulle caratterizzazioni voltammetriche",
-      "D5.6 - M15: Report finale sulla caratterizzazione completa della struttura e della morfologia dei materiali sviluppati nel progetto",
-      "D5.7 - M15: Report finale sulla caratterizzazione delle superfici",
-      "D5.8 - M15: Report su misure XAS in situ",
-      "D5.9 - M15: Report sul monitoraggio e la previsione del degrado del funzionamento delle celle r-PEMC e r-SOC basato su misure EIS e analisi DRT",
-      "D5.10 - M15: Report finale sul comportamento elettrochimico e sui fenomeni di degrado in cella a tre elettrodi di catalizzatori a base di MOFs",
+      "D5.1 - M9: Reference Materials Report",
+      "D5.3 - M11: In-situ XAS Experimental Setup",
+      "D5.9 - M15: Final Degradation Prediction Report",
     ],
   },
   {
@@ -93,22 +91,14 @@ const orData = [
     ente: "Università della Calabria",
     logo: "/loghi/unical.png",
     url: "https://www.unical.it/",
-    titolo: "Concept e Design del Sistema Stack Reversibile rPEMC/rSOC, analisi energetica",
-    obiettivo: "Progettazione concettuale e ingegneristica di sistemi stack reversibili integrati rPEMC/rSOC, con analisi energetica e termodinamica per l'ottimizzazione delle prestazioni di sistema.",
+    titolo_it: "Concept e Design dello Stack Reversibile, analisi energetica",
+    titolo_en: "Reversible Stack Concept and Design, Energy Analysis",
+    obiettivo_it: "Progettazione concettuale di sistemi stack reversibili integrati rPEMC/rSOC con analisi energetica.",
+    obiettivo_en: "Conceptual design of integrated reversible rPEMC/rSOC stack systems with energy analysis.",
     deliverables: [
-      "D6.1 - M7: Relazione tecnica su investigazione di configurazioni e concept differenti del Sistema Energetico rPEMC",
-      "D6.2 - M7: Relazione tecnica su investigazione di configurazioni e concept differenti del Sistema Energetico rSOC",
-      "D6.3 - M7: Analisi energetica preliminare del Sistema Energetico rPEMC",
-      "D6.4 - M7: Analisi energetica preliminare del Sistema Energetico rSOC",
-      "D6.5 - M7: Identificazione, definizione e pianificazione delle campagne sperimentali",
-      "D6.6 - M7: Report sui dati sperimentali ottenuti per il settaggio del prototipo",
-      "D6.1 - M10: Report sulle simulazioni numeriche Sistema Energetico rPEMC",
-      "D6.2 - M10: Report sulle simulazioni numeriche Sistema Energetico rSOC",
-      "D6.3 - M10: Report sui dati sperimentali ottenuti durante le attività sperimentali per il testing del sistema in stazionario",
-      "D6.4 - M15: Report sui dati sperimentali ottenuti durante le attività sperimentali per il testing del sistema in dinamico",
-      "D6.5 - M15: Analisi energetica finale del Sistema Energetico rPEMC",
-      "D6.6 - M15: Analisi energetica finale del Sistema Energetico rSOC",
-      "D6.7 - M15: Report sulla validazione dei modelli numerici sviluppati",
+      "D6.1 - M7: rPEMC Energy System Concept Report",
+      "D6.1 - M10: rPEMC Numerical Simulations Report",
+      "D6.7 - M15: Numerical Model Validation Report",
     ],
   },
   {
@@ -117,40 +107,34 @@ const orData = [
     ente: "Calabra Maceri e Servizi",
     logo: "/loghi/calabra-maceri.png",
     url: "https://www.calabramaceri.it/",
-    titolo: "Analisi casi di studio applicativi per sistemi reversibili",
-    obiettivo: "Identificazione e analisi di casi di studio applicativi reali per l'impiego di sistemi di celle reversibili, con valutazione tecnico-economica e analisi di fattibilità industriale.",
+    titolo_it: "Analisi casi di studio applicativi",
+    titolo_en: "Analysis of Application Case Studies",
+    obiettivo_it: "Identificazione e analisi di casi di studio reali per l'impiego di sistemi di celle reversibili.",
+    obiettivo_en: "Identification and analysis of real case studies for the use of reversible cell systems.",
     deliverables: [
-      "D7.1 - M7: Relazione preliminare su investigazione tecnica di configurazioni e concept differenti del Sistema Power-to-Hydrogen-to-Power con rPEMC",
-      "D7.2 - M7: Relazione preliminare su investigazione economica di configurazioni e concept differenti del Sistema Power-to-Hydrogen-to-Power con rPEMC",
-      "D7.3 - M7: Relazione preliminare su investigazione ambientale di configurazioni e concept differenti del Sistema Power-to-Hydrogen-to-Power con rPEMC",
-      "D7.4 - M7: Relazione preliminare su investigazione economica di configurazioni e concept differenti del Sistema Power-to-Hydrogen-to-Power con rSOC",
-      "D7.1 - M14: Relazione preliminare su investigazione tecnica del Sistema Power-to-Hydrogen-to-Power con rSOC",
-      "D7.2 - M14: Relazione preliminare su investigazione economica del Sistema Power-to-Hydrogen-to-Power con rSOC",
-      "D7.3 - M14: Relazione preliminare su investigazione ambientale del Sistema Power-to-Hydrogen-to-Power con rSOC",
-      "D7.4 - M14: Relazione preliminare su investigazione tecnica dei sistemi alternativi Power-to-X-to-Power con rSOC",
-      "D7.5 - M15: Relazione finale tecnica/economica/ambientale sui sistemi Power-to-Hydrogen-to-Power con rPEMC",
-      "D7.6 - M15: Relazione finale tecnica/economica/ambientale sui sistemi Power-to-Hydrogen-to-Power con rSOC",
-      "D7.7 - M15: Relazione finale tecnica/economica/ambientale sui sistemi Power-to-X-to-Power con rSOC",
+      "D7.1 - M7: Preliminary P2H2P Investigation",
+      "D7.4 - M14: rSOC P2X Investigation",
+      "D7.7 - M15: Final TEA for rSOC systems",
     ],
   },
 ];
 
 const ObiettiviList = () => {
+  const { t, language } = useLanguage();
+
   useEffect(() => {
-    document.title = "Obiettivi Realizzativi | CREA-SUD · Piano di Ricerca";
-  }, []);
+    document.title = `${t("nav.objectives")} | CREA-SUD`;
+  }, [t]);
 
   return (
   <Layout>
     <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
-      {/* Decorazione di sfondo */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#30A0D0]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-      
       <div className="cs-container relative z-10">
-        <p className="cs-eyebrow mb-6 cs-reveal">Ricerca e Sviluppo</p>
-        <h1 className="cs-h1 mb-10 cs-reveal-delayed-1">Obiettivi <em>Realizzativi</em></h1>
+        <p className="cs-eyebrow mb-6 cs-reveal">{t("objectives.eyebrow")}</p>
+        <h1 className="cs-h1 mb-10 cs-reveal-delayed-1">{t("objectives.title")}</h1>
         <p className="cs-lead max-w-2xl cs-reveal-delayed-2">
-          Le 7 linee di ricerca che compongono il progetto CREA-SUD, distribuite tra i vari partner del consorzio.
+          {t("objectives.lead")}
         </p>
       </div>
     </div>
@@ -161,9 +145,9 @@ const ObiettiviList = () => {
           <div className="md:col-span-4">
              <div className="sticky top-24 space-y-6">
                 <div className="bg-white border border-[#C9C5BF] p-8">
-                  <h3 className="cs-eyebrow text-[10px] mb-6 text-[#908080]">Dati OR</h3>
+                  <h3 className="cs-eyebrow text-[10px] mb-6 text-[#908080]">{t("objectives.sidebar_title")}</h3>
                   <p className="text-[14px] text-[#4A4744] leading-relaxed">
-                    Ogni Obiettivo Realizzativo (OR) è coordinato da un ente specifico e contribuisce alla validazione finale del sistema reversibile.
+                    {t("objectives.sidebar_text")}
                   </p>
                 </div>
                 <div className="cs-rule-accent" />
@@ -186,9 +170,11 @@ const ObiettiviList = () => {
                     <div className="p-8 flex-1">
                       <p className="cs-mono text-[9px] mb-1 text-[#908080] uppercase tracking-wider">{or.ente}</p>
                       <h2 className="font-sans font-bold text-[#0E1626] text-[18px] leading-snug group-hover:text-[#E08030] transition-colors mb-3">
-                        {or.titolo}
+                        {language === "it" ? or.titolo_it : or.titolo_en}
                       </h2>
-                      <p className="text-[14px] text-[#4A4744] line-clamp-2 leading-relaxed">{or.obiettivo}</p>
+                      <p className="text-[14px] text-[#4A4744] line-clamp-2 leading-relaxed">
+                        {language === "it" ? or.obiettivo_it : or.obiettivo_en}
+                      </p>
                     </div>
                     <div className="w-16 shrink-0 flex items-center justify-center">
                       <ArrowRight size={18} className="text-[#C9C5BF] group-hover:text-[#002040] transition-colors" />
@@ -207,15 +193,16 @@ const ObiettiviList = () => {
 
 const ObiettivoDetail = () => {
   const { id } = useParams();
+  const { t, language } = useLanguage();
   const or = orData.find((o) => o.id === id);
 
   if (!or) {
     return (
       <Layout>
         <div className="py-24 text-center">
-          <p className="cs-lead mx-auto">Obiettivo non trovato.</p>
+          <p className="cs-lead mx-auto">{t("objectives.not_found")}</p>
           <Link to="/obiettivi" className="cs-link mt-4 inline-block">
-            ← Torna agli obiettivi
+            {t("objectives.back_link")}
           </Link>
         </div>
       </Layout>
@@ -228,16 +215,17 @@ const ObiettivoDetail = () => {
 
   useEffect(() => {
     if (or) {
-      document.title = `${or.num} · ${or.titolo} | CREA-SUD`;
+      const title = language === "it" ? or.titolo_it : or.titolo_en;
+      document.title = `${or.num} · ${title} | CREA-SUD`;
     }
-  }, [or]);
+  }, [or, language]);
 
   return (
     <Layout>
       <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
         <div className="cs-container">
           <Link to="/obiettivi" className="cs-mono text-[10px] text-[#908080] hover:text-[#0E1626] uppercase flex items-center gap-2 mb-8 transition-colors">
-            <ArrowLeft size={12} /> Tutti gli obiettivi
+            <ArrowLeft size={12} /> {t("objectives.back_to_list")}
           </Link>
           <div className="grid md:grid-cols-12 gap-8 items-start">
              <div className="md:col-span-2">
@@ -245,7 +233,9 @@ const ObiettivoDetail = () => {
              </div>
              <div className="md:col-span-10">
                 <p className="cs-eyebrow mb-4">{or.ente}</p>
-                <h1 className="cs-h2 mb-4">{or.titolo}</h1>
+                <h1 className="cs-h2 mb-4">
+                  {language === "it" ? or.titolo_it : or.titolo_en}
+                </h1>
              </div>
           </div>
         </div>
@@ -256,14 +246,14 @@ const ObiettivoDetail = () => {
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-8 space-y-12">
               <div>
-                <h2 className="cs-eyebrow mb-6 text-[#908080]">Descrizione Attività</h2>
+                <h2 className="cs-eyebrow mb-6 text-[#908080]">{t("objectives.desc_title")}</h2>
                 <p className="text-[18px] text-[#0E1626] leading-relaxed font-medium">
-                  {or.obiettivo}
+                  {language === "it" ? or.obiettivo_it : or.obiettivo_en}
                 </p>
               </div>
 
               <div>
-                <h2 className="cs-eyebrow mb-6 text-[#908080]">Deliverable di Progetto</h2>
+                <h2 className="cs-eyebrow mb-6 text-[#908080]">{t("objectives.deliv_title")}</h2>
                 <div className="grid gap-4">
                   {or.deliverables.map((d, i) => (
                     <div key={i} className="bg-[#FAF9F6] border border-[#E8E6E2] p-6 flex items-start gap-4">
@@ -277,14 +267,14 @@ const ObiettivoDetail = () => {
 
             <div className="md:col-span-4">
               <div className="bg-white border border-[#C9C5BF] p-8">
-                <h3 className="cs-eyebrow text-[10px] mb-8 text-[#908080]">Informazioni</h3>
+                <h3 className="cs-eyebrow text-[10px] mb-8 text-[#908080]">{t("objectives.info_title")}</h3>
                 <dl className="space-y-6">
                   <div>
-                    <dt className="cs-mono text-[10px] text-[#908080] uppercase mb-1">Codice</dt>
+                    <dt className="cs-mono text-[10px] text-[#908080] uppercase mb-1">{t("objectives.code_label")}</dt>
                     <dd className="cs-mono font-bold text-[13px] text-[#0E1626]">{or.num}</dd>
                   </div>
                   <div className="border-t border-[#F5F4F2] pt-4">
-                    <dt className="cs-mono text-[10px] text-[#908080] uppercase mb-1">Ente responsabile</dt>
+                    <dt className="cs-mono text-[10px] text-[#908080] uppercase mb-1">{t("objectives.lead_entity")}</dt>
                     <dd className="cs-mono font-bold text-[13px] text-[#0E1626] mb-4">{or.ente}</dd>
                     <a 
                       href={or.url} 
@@ -296,8 +286,8 @@ const ObiettivoDetail = () => {
                     </a>
                   </div>
                   <div className="border-t border-[#F5F4F2] pt-4">
-                    <dt className="cs-mono text-[10px] text-[#908080] uppercase mb-1">Stato</dt>
-                    <dd className="cs-mono font-bold text-[13px] text-[#E08030]">In corso</dd>
+                    <dt className="cs-mono text-[10px] text-[#908080] uppercase mb-1">{t("objectives.status_label")}</dt>
+                    <dd className="cs-mono font-bold text-[13px] text-[#E08030]">{t("objectives.status_value")}</dd>
                   </div>
                 </dl>
               </div>
@@ -311,8 +301,10 @@ const ObiettivoDetail = () => {
                 to={`/obiettivi/${prev.id}`}
                 className="group text-left"
               >
-                <span className="cs-mono text-[10px] text-[#908080] uppercase block mb-2 group-hover:text-[#E08030] transition-colors">← Precedente</span>
-                <span className="font-bold text-[14px] text-[#0E1626] block leading-snug">{prev.num}: {prev.titolo}</span>
+                <span className="cs-mono text-[10px] text-[#908080] uppercase block mb-2 group-hover:text-[#E08030] transition-colors">← {t("objectives.prev")}</span>
+                <span className="font-bold text-[14px] text-[#0E1626] block leading-snug">
+                  {prev.num}: {language === "it" ? prev.titolo_it : prev.titolo_en}
+                </span>
               </Link>
             ) : <span />}
             {next ? (
@@ -320,8 +312,10 @@ const ObiettivoDetail = () => {
                 to={`/obiettivi/${next.id}`}
                 className="group text-right"
               >
-                <span className="cs-mono text-[10px] text-[#908080] uppercase block mb-2 group-hover:text-[#E08030] transition-colors">Successivo →</span>
-                <span className="font-bold text-[14px] text-[#0E1626] block leading-snug">{next.num}: {next.titolo}</span>
+                <span className="cs-mono text-[10px] text-[#908080] uppercase block mb-2 group-hover:text-[#E08030] transition-colors">{t("objectives.next")} →</span>
+                <span className="font-bold text-[14px] text-[#0E1626] block leading-snug">
+                  {next.num}: {language === "it" ? next.titolo_it : next.titolo_en}
+                </span>
               </Link>
             ) : <span />}
           </div>
