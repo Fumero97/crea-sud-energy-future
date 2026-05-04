@@ -142,11 +142,14 @@ const ObiettiviList = () => {
 
   return (
   <Layout>
-    <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
-      <div className="cs-container">
-        <p className="cs-eyebrow mb-6">Ricerca e Sviluppo</p>
-        <h1 className="cs-h1 mb-10">Obiettivi <em>Realizzativi</em></h1>
-        <p className="cs-lead max-w-2xl">
+    <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
+      {/* Decorazione di sfondo */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#30A0D0]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      
+      <div className="cs-container relative z-10">
+        <p className="cs-eyebrow mb-6 cs-reveal">Ricerca e Sviluppo</p>
+        <h1 className="cs-h1 mb-10 cs-reveal-delayed-1">Obiettivi <em>Realizzativi</em></h1>
+        <p className="cs-lead max-w-2xl cs-reveal-delayed-2">
           Le 7 linee di ricerca che compongono il progetto CREA-SUD, distribuite tra i vari partner del consorzio.
         </p>
       </div>
@@ -172,7 +175,7 @@ const ObiettiviList = () => {
                 <Link
                   key={or.id}
                   to={`/obiettivi/${or.id}`}
-                  className="block bg-white border border-[#C9C5BF] hover:border-[#002040] transition-colors group"
+                  className="block bg-white border border-[#C9C5BF] hover:border-[#002040] transition-all duration-300 group cs-hover-lift cs-reveal-delayed-2"
                 >
                   <div className="flex items-stretch">
                     <div className="w-20 shrink-0 border-r border-[#E8E6E2] flex items-center justify-center bg-[#FAF9F6]/50">

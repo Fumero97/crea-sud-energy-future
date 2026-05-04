@@ -39,12 +39,15 @@ const Contatti = () => {
 
   return (
     <Layout>
-      <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
-        <div className="cs-container">
-          <p className="cs-eyebrow mb-4">Relazioni Esterne</p>
-          <h1 className="cs-h1 mb-6">Contattaci</h1>
-          <p className="cs-lead max-w-2xl">
-            Siamo aperti a collaborazioni con enti di ricerca, partner industriali e istituzioni nel campo delle tecnologie dell'idrogeno.
+      <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
+        {/* Decorazione di sfondo */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E08030]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        
+        <div className="cs-container relative z-10">
+          <p className="cs-eyebrow mb-6 cs-reveal">Relazioni Esterne</p>
+          <h1 className="cs-h1 mb-8 cs-reveal-delayed-1">Mettiti in <em>Contatto</em></h1>
+          <p className="cs-lead max-w-2xl cs-reveal-delayed-2">
+            Per informazioni sul progetto, collaborazioni o chiarimenti tecnici, il nostro team è a tua disposizione.
           </p>
         </div>
       </div>
@@ -52,35 +55,26 @@ const Contatti = () => {
       <section className="py-24">
         <div className="cs-container">
           <div className="grid md:grid-cols-12 gap-16">
-            <div className="md:col-span-5 space-y-12">
-              <div className="space-y-4">
-                <h2 className="cs-eyebrow text-[#908080]">Contatti Diretti</h2>
-                <div className="flex items-start gap-6">
-                  <div className="shrink-0 w-12 h-12 bg-[#002040] flex items-center justify-center text-white">
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <h3 className="cs-mono text-[10px] uppercase text-[#908080] mb-1">Email Istituzionale</h3>
-                    <a href="mailto:info@crea-sud.it" className="cs-link text-[16px] font-bold">
-                      info@crea-sud.it
-                    </a>
-                  </div>
+            <div className="md:col-span-4 space-y-8">
+              <div className="bg-white border border-[#C9C5BF] p-8 cs-reveal cs-hover-lift">
+                <div className="w-12 h-12 bg-[#FAF9F6] border border-[#E8E6E2] flex items-center justify-center mb-6">
+                  <Mail className="text-[#E08030]" size={20} />
                 </div>
-                <div className="flex items-start gap-6 pt-6">
-                  <div className="shrink-0 w-12 h-12 bg-[#002040] flex items-center justify-center text-white">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h3 className="cs-mono text-[10px] uppercase text-[#908080] mb-1">Sede di Coordinamento</h3>
-                    <p className="text-[#4A4744] text-[15px] leading-relaxed">
-                      <strong>Università della Calabria</strong><br />
-                      Dipartimento di Ingegneria Meccanica,<br />
-                      Energetica e Gestionale (DIMEG)<br />
-                      Via Pietro Bucci, Cubo 44C<br />
-                      87036 Rende (CS), Italia
-                    </p>
-                  </div>
+                <h3 className="cs-h4 mb-2">Email</h3>
+                <p className="text-[14px] text-[#4A4744] mb-4">Inviaci un messaggio diretto</p>
+                <a href="mailto:info@crea-sud.it" className="cs-link font-medium">info@crea-sud.it</a>
+              </div>
+
+              <div className="bg-white border border-[#C9C5BF] p-8 cs-reveal-delayed-1 cs-hover-lift">
+                <div className="w-12 h-12 bg-[#FAF9F6] border border-[#E8E6E2] flex items-center justify-center mb-6">
+                  <MapPin className="text-[#E08030]" size={20} />
                 </div>
+                <h3 className="cs-h4 mb-2">Sede</h3>
+                <p className="text-[14px] text-[#4A4744] mb-4">Laboratori di Ricerca Unical</p>
+                <p className="text-[15px] font-medium text-[#0E1626]">
+                  Via Pietro Bucci, Cubo 44C<br />
+                  87036 Rende (CS), Italia
+                </p>
               </div>
 
               <div className="p-8 border-l-4 border-[#E08030] bg-[#FAF9F6]">
@@ -90,7 +84,7 @@ const Contatti = () => {
               </div>
             </div>
 
-            <div className="md:col-span-7">
+            <div className="md:col-span-8 cs-reveal-delayed-2">
               <div className="bg-white border border-[#C9C5BF] p-10">
                 {submitted ? (
                   <div className="py-12 text-center space-y-6 animate-in fade-in zoom-in duration-500">

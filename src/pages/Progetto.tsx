@@ -102,11 +102,14 @@ const Progetto = () => {
   return (
     <Layout>
       {/* Header */}
-      <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
-        <div className="cs-container">
-          <p className="cs-eyebrow mb-6">Dettaglio Scientifico</p>
-          <h1 className="cs-h1 mb-8">Il <em>Progetto</em> CREA-SUD</h1>
-          <p className="cs-lead max-w-4xl">
+      <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
+        {/* Decorazione di sfondo */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E08030]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        
+        <div className="cs-container relative z-10">
+          <p className="cs-eyebrow mb-6 cs-reveal">Dettaglio Scientifico</p>
+          <h1 className="cs-h1 mb-8 cs-reveal-delayed-1">Il <em>Progetto</em> CREA-SUD</h1>
+          <p className="cs-lead max-w-4xl cs-reveal-delayed-2">
             Celle REversibili Avanzate e sostenibili di bassa ed alta temperatura: ricerca e Sviluppo Unificato
             di concept, materiali, e Design innovativi
           </p>
@@ -213,7 +216,7 @@ const Progetto = () => {
       </section>
 
       {/* Partner */}
-      <section className="py-24 border-b border-[#E8E6E2]">
+      <section className="py-24 border-b border-[#E8E6E2] cs-reveal">
         <div className="cs-container">
           <h4 className="cs-eyebrow mb-4">Network</h4>
           <h2 className="cs-h2 mb-12">Il Consorzio</h2>
@@ -224,7 +227,7 @@ const Progetto = () => {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white border border-[#C9C5BF] p-6 flex flex-col items-center gap-4 group hover:border-[#E08030] transition-all duration-300"
+                className="bg-white border border-[#C9C5BF] p-6 flex flex-col items-center gap-4 group hover:border-[#E08030] transition-all duration-300 cs-hover-lift"
               >
                 <div className="h-16 flex items-center justify-center">
                   <img src={p.src} alt={p.alt} className="max-h-12 max-w-full object-contain transition-transform group-hover:scale-105" />
