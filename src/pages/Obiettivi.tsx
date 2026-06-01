@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
@@ -221,6 +222,12 @@ const ObiettiviList = () => {
 
   return (
   <Layout>
+    <SEO
+      title="Obiettivi Realizzativi"
+      description="I 7 Obiettivi Realizzativi del progetto CREA-SUD: membrane elettrolitiche, catalizzatori, celle rSOC, diagnostica EIS-DRT, design di stack e casi studio Power-to-Hydrogen."
+      canonical="/obiettivi"
+      lang={language as "it" | "en"}
+    />
     <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#30A0D0]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="cs-container relative z-10">
@@ -306,15 +313,19 @@ const ObiettivoDetail = () => {
   const prev = currentIndex > 0 ? orData[currentIndex - 1] : null;
   const next = currentIndex < orData.length - 1 ? orData[currentIndex + 1] : null;
 
-  useEffect(() => {
-    if (or) {
-      const title = language === "it" ? or.titolo_it : or.titolo_en;
-      document.title = `${or.num} · ${title} | CREA-SUD`;
-    }
-  }, [or, language]);
+  useEffect(() => {}, [or, language]);
+
+  const orTitle = language === "it" ? or.titolo_it : or.titolo_en;
+  const orSommario = language === "it" ? or.sommario_it : or.sommario_en;
 
   return (
     <Layout>
+      <SEO
+        title={`${or.num} · ${orTitle}`}
+        description={orSommario}
+        canonical={`/obiettivi/${or.id}`}
+        lang={language as "it" | "en"}
+      />
       <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2]">
         <div className="cs-container">
           <Link to="/obiettivi" className="cs-mono text-[10px] text-[#908080] hover:text-[#0E1626] uppercase flex items-center gap-2 mb-8 transition-colors">

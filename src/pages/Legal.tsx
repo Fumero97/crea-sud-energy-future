@@ -1,16 +1,18 @@
-import { useEffect } from "react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Legal = () => {
   const { t, language } = useLanguage();
 
-  useEffect(() => {
-    document.title = `${t("legal.title")} | CREA-SUD`;
-  }, [t]);
-
   return (
     <Layout>
+      <SEO
+        title="Privacy & Cookie Policy"
+        description="Informativa sulla privacy e policy sui cookie del sito CREA-SUD, progetto PNRR per lo sviluppo di celle a combustibile reversibili."
+        canonical="/legal"
+        lang={language as "it" | "en"}
+      />
       <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E08030]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="cs-container relative z-10">

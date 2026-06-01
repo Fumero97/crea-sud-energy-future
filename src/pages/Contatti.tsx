@@ -1,15 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Contatti = () => {
   const [submitted, setSubmitted] = useState(false);
-  const { t } = useLanguage();
-
-  useEffect(() => {
-    document.title = `${t("nav.contacts")} | CREA-SUD`;
-  }, [t]);
+  const { t, language } = useLanguage();
 
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgzjgnq";
 
@@ -40,6 +37,12 @@ const Contatti = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contatti"
+        description="Contatta il team del progetto CREA-SUD. Università della Calabria, ente capofila. Per informazioni su ricerca, collaborazioni e disseminazione dei risultati."
+        canonical="/contatti"
+        lang={language as "it" | "en"}
+      />
       <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E08030]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="cs-container relative z-10">

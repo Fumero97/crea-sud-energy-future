@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { useLanguage } from "../contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
 
@@ -15,9 +16,7 @@ const partners = [
 const Index = () => {
   const { t, language } = useLanguage();
 
-  useEffect(() => {
-    document.title = "CREA-SUD · Homepage | Advanced Reversible Fuel Cells";
-  }, []);
+  useEffect(() => {}, []);
 
   const orList = [
     { id: "OR1", ente: "Università della Calabria", titolo: language === 'it' ? "Project Management e Disseminazione" : "Project Management and Dissemination" },
@@ -37,6 +36,12 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Celle Reversibili Avanzate per il Sud Italia"
+        description="CREA-SUD è un progetto PNRR che sviluppa celle a combustibile reversibili (rPEMC e rSOC) per lo stoccaggio di energia da fonti rinnovabili. ATS di 4 università italiane e un partner industriale."
+        canonical="/"
+        lang={language as "it" | "en"}
+      />
       {/* Hero */}
       <section className="bg-[#FAF9F6] border-b border-[#E8E6E2] overflow-hidden pt-20 pb-32 relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E08030]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />

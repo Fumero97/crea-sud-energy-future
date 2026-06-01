@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -121,6 +122,12 @@ const Progetto = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Il Progetto CREA-SUD"
+        description="Scopri il progetto PNRR CREA-SUD: obiettivi, tecnologie reversibili rPEMC e rSOC, partner dell'ATS e milestone. Finanziato dal Ministero dell'Ambiente e della Sicurezza Energetica."
+        canonical="/progetto"
+        lang={language as "it" | "en"}
+      />
       {/* Header */}
       <div className="bg-[#FAF9F6] pt-20 pb-16 border-b border-[#E8E6E2] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E08030]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
