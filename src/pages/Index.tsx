@@ -20,13 +20,13 @@ const Index = () => {
   }, []);
 
   const orList = [
-    { id: "OR1", ente: "Unical", titolo: language === 'it' ? "Project Management" : "Project Management" },
-    { id: "OR2", ente: "Unical", titolo: language === 'it' ? "Sintesi ionomeri e membrane" : "Synthesis of ionomers and membranes" },
-    { id: "OR3", ente: "Sapienza", titolo: language === 'it' ? "Catalizzatori low-Pt e Pt-free" : "Low-Pt and Pt-free catalysts" },
-    { id: "OR4", ente: "Salerno", titolo: language === 'it' ? "RF sputtering per rSOC" : "RF sputtering for rSOC" },
-    { id: "OR5", ente: "Camerino", titolo: language === 'it' ? "Diagnostica avanzata" : "Advanced diagnostics" },
-    { id: "OR6", ente: "Unical", titolo: language === 'it' ? "Design stack e modellazione" : "Stack design and modeling" },
-    { id: "OR7", ente: "Calabra Maceri", titolo: language === 'it' ? "Casi studio applicativi" : "Application case studies" },
+    { id: "OR1", ente: "Università della Calabria", titolo: language === 'it' ? "Project Management e Disseminazione" : "Project Management and Dissemination" },
+    { id: "OR2", ente: "Università della Calabria", titolo: language === 'it' ? "Sintesi di ionomeri e di materiali ibridi e nanostrutturati finalizzati allo sviluppo di membrane elettrolitiche nanocomposite per rPEMC" : "Synthesis of ionomers and hybrid/nanostructured materials for nanocomposite electrolytic membranes for rPEMC" },
+    { id: "OR3", ente: "Sapienza Università di Roma", titolo: language === 'it' ? "Catalizzatori low-Pt e Pt-free per rPEMC, Preparazione e Caratterizzazione energetica dei MEA e degli stack di rPEMFC" : "Low-Pt and Pt-free catalysts for rPEMC, Preparation and Energy Characterization of MEAs and rPEMFC stacks" },
+    { id: "OR4", ente: "Università degli Studi di Salerno", titolo: language === 'it' ? "Sviluppo di nuovi materiali, formulazioni alternative, caratterizzazione e produzione mediante deposizione di film sottili con RF sputtering di celle reversibili (rSOC) operanti a temperature inferiori a 700°C" : "Development of new materials, alternative formulations, characterization and production via RF sputtering thin-film deposition of reversible cells (rSOC) operating below 700°C" },
+    { id: "OR5", ente: "Università degli Studi di Camerino", titolo: language === 'it' ? "Caratterizzazioni chimico-fisiche avanzate di materiali e MEA per sistemi reversibili rPEMC e rSOC. Sviluppo di metodologie per la diagnosi dello state-of-health di celle reversibili rPEMC e rSOC basati su misure di impedenza e analisi DRT" : "Advanced physico-chemical characterization of materials and MEAs for reversible rPEMC and rSOC systems. Development of state-of-health diagnostic methodologies based on impedance measurements and DRT analysis" },
+    { id: "OR6", ente: "Università della Calabria", titolo: language === 'it' ? "Concept, Design del Sistema Stack Reversibile rPEM e rSOC, Analisi delle Performance Energetiche tramite Modelli Numerici e Attività Sperimentale" : "Concept and Design of the Reversible Stack System rPEM and rSOC, Energy Performance Analysis via Numerical Models and Experimental Activity" },
+    { id: "OR7", ente: "Calabra Maceri e Recuperi S.r.l.", titolo: language === 'it' ? "Analisi Complessive del Sistema ed Analisi di Casi Studio Applicativi Rilevanti per i Sistemi Reversibili" : "Overall System Analysis and Analysis of Relevant Application Case Studies for Reversible Systems" },
   ];
 
   const milestones = [
@@ -87,56 +87,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Tecnologie */}
-      <section className="py-24 border-b border-[#E8E6E2]">
-        <div className="cs-container">
-          <div className="mb-20">
-            <h4 className="cs-eyebrow mb-6">{t("home.tech_eyebrow")}</h4>
-            <h2 className="cs-h2 mb-8">{t("home.tech_title")}</h2>
-            <p className="cs-lead max-w-2xl">{t("home.tech_lead")}</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="border border-[#C9C5BF] p-8 bg-white relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-[#E08030]" />
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <span className="cs-mono text-[11px] font-bold text-[#E08030] bg-[#E08030]/10 px-2 py-1 uppercase tracking-wider">rPEMC</span>
-                  <span className="block mt-2 cs-mono text-[10px] text-[#908080] uppercase">{t("project.rpemc_sub")}</span>
-                </div>
-              </div>
-              <h3 className="cs-h3 mb-8">{t("project.rpemc_title")}</h3>
-              <div className="space-y-4">
-                {t("project.rpemc_specs").map((s: any) => (
-                  <div key={s.key} className="flex border-b border-[#F5F4F2] pb-3 last:border-0">
-                    <span className="cs-mono text-[10px] text-[#908080] uppercase w-32 shrink-0 pt-1">{s.key}</span>
-                    <span className="text-[14px] text-[#0E1626]">{s.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="border border-[#C9C5BF] p-8 bg-white relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-[#30A0D0]" />
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <span className="cs-mono text-[11px] font-bold text-[#30A0D0] bg-[#30A0D0]/10 px-2 py-1 uppercase tracking-wider">rSOC</span>
-                  <span className="block mt-2 cs-mono text-[10px] text-[#908080] uppercase">{t("project.rsoc_sub")}</span>
-                </div>
-              </div>
-              <h3 className="cs-h3 mb-8">{t("project.rsoc_title")}</h3>
-              <div className="space-y-4">
-                {t("project.rsoc_specs").map((s: any) => (
-                  <div key={s.key} className="flex border-b border-[#F5F4F2] pb-3 last:border-0">
-                    <span className="cs-mono text-[10px] text-[#908080] uppercase w-32 shrink-0 pt-1">{s.key}</span>
-                    <span className="text-[14px] text-[#0E1626]">{s.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Tecnologie — nascosta temporaneamente, da rivedere */}
+      {/* <section className="py-24 border-b border-[#E8E6E2]">
+        ...
+      </section> */}
 
       {/* Consortium */}
       <section className="py-24 bg-[#FAF9F6] border-b border-[#E8E6E2]">

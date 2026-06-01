@@ -14,41 +14,100 @@ const partners = [
 
 const milestones = [
   {
-    id: "M7",
-    titolo_it: "Prima scadenza",
-    titolo_en: "First Deadline",
-    sub_it: "materiali, membrane, setup",
-    sub_en: "materials, membranes, setup",
+    id: "OR1",
+    titolo_it: "Project Management e Disseminazione",
+    titolo_en: "Project Management and Dissemination",
+    sub_it: "Università della Calabria",
+    sub_en: "Università della Calabria",
     deliverable: [
-      "D1.1 Management Report",
-      "D1.2 Website & Communication",
-      "D2.1 PEM nanocomposite",
-      "D4.1 RF sputtering upgrade",
-      "D6.1 Preliminary energy analysis",
+      "M1.1 – Monitoraggio dello stato di avanzamento del progetto",
+      "M1.2 – Monitoraggio dello sviluppo del Piano strategico di comunicazione/disseminazione",
     ],
   },
   {
-    id: "M10",
-    titolo_it: "Simulazioni CFD e testing",
-    titolo_en: "CFD Simulations and Testing",
-    sub_it: "stazionario",
-    sub_en: "steady state",
+    id: "OR2",
+    titolo_it: "Sintesi di ionomeri e di materiali ibridi e nanostrutturati finalizzati allo sviluppo di membrane elettrolitiche nanocomposite per rPEMC",
+    titolo_en: "Synthesis of ionomers and hybrid/nanostructured materials for nanocomposite electrolytic membranes for rPEMC",
+    sub_it: "Università della Calabria",
+    sub_en: "Università della Calabria",
     deliverable: [
-      "D6.1 rPEMC numerical simulations",
-      "D6.2 rSOC numerical simulations",
-      "D6.3 Steady-state testing data",
+      "M2.1 – Conducibilità protonica delle PEM a base di sPSf ≥0.075 S cm⁻¹ @ 120 °C e RH ≤ 40%, e uno swelling di ~ 10%",
+      "M2.2 – Modulo di Young delle PEM > 800 MPa",
+      "M2.3 – Degradazione della membrana: valutazione della stabilità mediante test di Fenton con perdita di peso <1% dopo 8 ore",
     ],
   },
   {
-    id: "M15",
-    titolo_it: "Chiusura",
-    titolo_en: "Closure",
-    sub_it: "report finali, validazione",
-    sub_en: "final reports, validation",
+    id: "OR3",
+    titolo_it: "Catalizzatori low-Pt e Pt-free per rPEMC, Preparazione e Caratterizzazione energetica dei MEA e degli stack di rPEMFC",
+    titolo_en: "Low-Pt and Pt-free catalysts for rPEMC, Preparation and Energy Characterization of MEAs and rPEMFC stacks",
+    sub_it: "Sapienza Università di Roma",
+    sub_en: "Sapienza Università di Roma",
     deliverable: [
-      "D3.4 Reversible PEMFC stack",
-      "D6.4 Dynamic testing",
-      "D7.5 TEA final P2H2P and P2X",
+      "M3.1 – Sviluppo di catalizzatori Pt-free",
+      "M3.2 – Definizione della tipologia di membrane più adatte per il funzionamento in modalità reversibile",
+      "M3.3 – Realizzazione di stack di celle PEM reversibili",
+      "M3.4 – Realizzazione di codici di calcolo fluidodinamici ed elettrochimici per la simulazione del comportamento degli stack",
+    ],
+  },
+  {
+    id: "OR4",
+    titolo_it: "Sviluppo di nuovi materiali, formulazioni alternative, caratterizzazione e produzione mediante deposizione di film sottili con RF sputtering di celle reversibili (rSOC) operanti a temperature inferiori a 700°C",
+    titolo_en: "Development of new materials and production via RF sputtering thin-film deposition of reversible cells (rSOC) operating below 700°C",
+    sub_it: "Università degli Studi di Salerno",
+    sub_en: "Università degli Studi di Salerno",
+    deliverable: [
+      "M4.1 – Completamento upgrading attrezzatura per sputtering RF su rSOC 100 cm²",
+      "M4.2 – Realizzazione su substrati cristallini di film sottili di diversi materiali di interesse per componenti di rSOC",
+      "M4.3 – Realizzazione di componenti di rSOC di 10 cm²",
+      "M4.4 – Realizzazione di componenti di rSOC di 100 cm²",
+    ],
+  },
+  {
+    id: "OR5",
+    titolo_it: "Caratterizzazioni chimico-fisiche avanzate di materiali e MEA per sistemi reversibili rPEMC e rSOC. Sviluppo di metodologie per la diagnosi dello state-of-health",
+    titolo_en: "Advanced physico-chemical characterization of materials and MEAs for rPEMC and rSOC systems. Development of state-of-health diagnostic methodologies",
+    sub_it: "Università degli Studi di Camerino",
+    sub_en: "Università degli Studi di Camerino",
+    deliverable: [
+      "M5.1 – Risoluzione delle strutture e morfologie dei materiali commerciali disponibili",
+      "M5.2 – Caratterizzazione superficiale dei materiali commerciali disponibile",
+      "M5.3 – Setup per misure in situ disponibile",
+      "M5.4 – Modello elettrochimico di funzionamento della cella disponibile",
+      "M5.5 – Catalizzatori derivati da MOFs disponibili",
+      "M5.6 – Risoluzione delle strutture e morfologie dei materiali sviluppati nel progetto",
+      "M5.7 – Caratterizzazione superficiale dei materiali sviluppati nel progetto disponibile",
+      "M5.8 – Caratterizzazione operando disponibile",
+      "M5.9 – Metodologia per la prevenzione e il degrado del funzionamento delle celle disponibile",
+      "M5.10 – Caratterizzazione dei materiali sintetizzati disponibile, con comportamento stabile in celle singole per t>1000h",
+    ],
+  },
+  {
+    id: "OR6",
+    titolo_it: "Concept, Design del Sistema Stack Reversibile rPEM e rSOC, Analisi delle Performance Energetiche tramite Modelli Numerici e Attività Sperimentale",
+    titolo_en: "Concept and Design of the Reversible Stack System rPEM and rSOC, Energy Performance Analysis via Numerical Models and Experimental Activity",
+    sub_it: "Università della Calabria",
+    sub_en: "Università della Calabria",
+    deliverable: [
+      "M6.1 – Prestazioni simulate dell'integrazione BoP-rPEMC che garantiscano il funzionamento dello stack",
+      "M6.2 – Prestazioni simulate dell'integrazione BoP-rSOC che garantiscano il funzionamento dello stack",
+      "M6.3 – Validazione dei modelli numerici sviluppati su banco prova sperimentale settato e funzionante",
+      "M6.4 – Prestazioni del sistema energetico rPEMC superiori all'equivalente sistema discreto separato in EL e FC",
+      "M6.5 – Prestazioni del sistema energetico rSOC superiori all'equivalente sistema discreto separato in EL e FC",
+    ],
+  },
+  {
+    id: "OR7",
+    titolo_it: "Analisi Complessive del Sistema ed Analisi di Casi Studio Applicativi Rilevanti per i Sistemi Reversibili",
+    titolo_en: "Overall System Analysis and Analysis of Relevant Application Case Studies for Reversible Systems",
+    sub_it: "Calabra Maceri e Recuperi S.r.l.",
+    sub_en: "Calabra Maceri e Recuperi S.r.l.",
+    deliverable: [
+      "M7.1 – Identificazione dei casi studio tecnicamente ottimali per applicazioni Power-to-Hydrogen-to-Power con rSOC",
+      "M7.2 – Identificazione dei casi studio economicamente ottimali per applicazioni Power-to-Hydrogen-to-Power con rSOC",
+      "M7.3 – Identificazione dei casi studio ambientalmente ottimali per applicazioni Power-to-Hydrogen-to-Power con rSOC",
+      "M7.4 – Identificazione dei casi studio tecnicamente ottimali per applicazioni Power-to-X-to-Power con rSOC",
+      "M7.5 – Identificazione dei casi studio economicamente ottimali per applicazioni Power-to-X-to-Power con rSOC",
+      "M7.6 – Identificazione dei casi studio ambientalmente ottimali per applicazioni Power-to-X-to-Power con rSOC",
     ],
   },
 ];
@@ -207,21 +266,28 @@ const Progetto = () => {
               <div key={m.id} className="grid md:grid-cols-12 gap-8 relative group">
                 <div className="md:col-span-2">
                   <span className="cs-h3 text-[#E08030] font-serif italic block">{m.id}</span>
-                  <span className="cs-mono text-[10px] text-[#908080] uppercase">
+                  <span className="cs-mono text-[10px] text-[#908080] uppercase leading-tight block mt-1">
                     {language === "it" ? m.sub_it : m.sub_en}
                   </span>
                 </div>
                 <div className="md:col-span-10 border-l border-[#C9C5BF] pl-8 pb-4">
-                  <h4 className="font-bold text-[16px] text-[#0E1626] mb-6 tracking-tight uppercase">
+                  <h4 className="font-bold text-[16px] text-[#0E1626] mb-6 tracking-tight">
                     {language === "it" ? m.titolo_it : m.titolo_en}
                   </h4>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
-                    {m.deliverable.map((d) => (
-                      <div key={d} className="cs-mono text-[10px] text-[#4A4744] flex gap-2 leading-tight">
-                        <span className="text-[#E08030]">•</span>
-                        <span>{d}</span>
-                      </div>
-                    ))}
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {m.deliverable.map((d) => {
+                      const match = d.match(/^(M[\d.]+)\s*[–-]\s*(.+)$/);
+                      const code = match ? match[1] : null;
+                      const text = match ? match[2] : d;
+                      return (
+                        <div key={d} className="border border-[#E8E6E2] bg-white p-4">
+                          {code && (
+                            <span className="cs-mono text-[11px] font-bold text-[#E08030] block mb-2">{code}</span>
+                          )}
+                          <p className="text-[13px] text-[#4A4744] leading-snug">{text}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
